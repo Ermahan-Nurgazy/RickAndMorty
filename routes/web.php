@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/api/test', function () {
+    $json = array( 'date' => date("Y-m-dTH:i:sP", time()));
+    return json_encode($json);
+});
